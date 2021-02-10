@@ -193,6 +193,8 @@ i.ex-11-icon:hover {
 }
 
 /* esercizio 13 */
+
+/* non capisco perchè si muove soltanto uno spazio. Se commento .ex-13-bottom-white, il top si muove  */
 .ex-13-button:hover .ex-13-top-white {
   animation: move 2s linear;
 }
