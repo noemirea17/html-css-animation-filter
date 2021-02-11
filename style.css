@@ -164,48 +164,65 @@ i.ex-10-icon {
 
 @keyframes rotate {
   0% {transform: rotate(0deg);}
-	100% {transform: rotate(359deg);}
+	100% {transform: rotate(360deg);}
 }
 
 /* esercizio 11 */
-i.ex-11-icon {
-  transition: 1s;
-  animation-direction: alternate;
+.ex-11-icon:hover {
+  animation: spin 3s infinite;
 }
 
-i.ex-11-icon:hover {
-  transform: rotate(270deg);
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  70% {transform: rotate(270deg);}
+  100% {transform: rotate(0deg);}
 }
+
+
 
 /* esercizio 12 */
-.ex-12-top-white,
-.ex-12-bottom-white {
-  transition: 1s;
+.ex-12-button:hover .ex-12-top-white {
+  animation: rotate 3s;
 }
 
+@keyframes rotate {
+  0% {
+    left: 10%;
+  }
 
-.ex-12-button:hover .ex-12-top-white {
-  left: calc(100% - 40px);
+  100% {
+    left: 50%;
+  }
 }
 
 .ex-12-button:hover .ex-12-bottom-white {
-  right: calc(100% - 40px);
+  animation: moveon 3s;
 }
+
+@keyframes moveon {
+    0% {
+      right: 10%;
+    }
+    
+    100% {
+      right: 50%;
+    }
+}
+
 
 /* esercizio 13 */
 
-/* non capisco perchè si muove soltanto uno spazio. Se commento .ex-13-bottom-white, il top si muove  */
 .ex-13-button:hover .ex-13-top-white {
-  animation: move 2s linear;
+  animation: rotate1 2s linear;
 }
 
-@keyframes move {
+@keyframes rotate1 {
   0% {
     top: -10px;
     left: 10%;
   }
 
-  30% {
+  25% {
     top: -10px;
     left: calc(100% - 40px);
   }
@@ -215,33 +232,28 @@ i.ex-11-icon:hover {
     left: calc(100% - 40px);
   }
 
-  70% {
+  75% {
     top: 100%;
     left: 0;
   }
 
-  90% {
-    top: -10px;
-    left: -15px;
-  }
-
   100% {
     top: -10px;
-    left: 10%;
+    left: -10%;
   }
 }
 
 .ex-13-button:hover .ex-13-bottom-white {
-  animation: move 2s linear;
+  animation: moveon1 2s linear;
 }
 
-@keyframes move {
+@keyframes moveon1 {
   0% {
     bottom: -10px;
     right: 20%;
   }
 
-  30% {
+  25% {
     bottom: -10px;
     right: calc(100% - 40px);
   }
@@ -251,19 +263,14 @@ i.ex-11-icon:hover {
     right: calc(100% - 40px);
   }
 
-  70% {
+  75% {
     bottom: 100%;
     right: 0;
   }
 
-  90% {
-    bottom: -10px;
-    right: -15px;
-  }
-
   100% {
     bottom: -10px;
-    right: 20%;
+    right: -15px;
   }
 
 }
